@@ -51,6 +51,11 @@ pmbootstrap build device-xiaomi-dipper
 ```shell
 pmbootstrap install
 ```
+### Fix error
+```shell
+pmbootstrap chroot apk fix --rootfs
+```
+
 ### Or create an Android recovery zip package:
 ```shell
 pmbootstrap install --android-recovery-zip --recovery-install-partition=data
