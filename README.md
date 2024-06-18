@@ -34,6 +34,10 @@ cp -r ~/postmarketos/firmware-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/p
 cd ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-xiaomi-dipper
 pmbootstrap checksum linux-xiaomi-dipper
 pmbootstrap kconfig edit
+```
+### Build
+!!! A very important step, you need to copy this file and grant execution permission when the `~/.local/var/pmbootstrap/chroot_native/home/pmos/build/src/linux-749b0d4ab2a325e11a8aba7105a0f678a8ecf404/arch/arm64/boot/dts/qcom/sdm845-xiaomi-dipper.dtb` file exists.
+```shell
 pmbootstrap -j8 build linux-xiaomi-dipper
 ```
 Open a new terminal and execute `pmbootstrap log` to view the log.
@@ -47,6 +51,8 @@ pmbootstrap build device-xiaomi-dipper
 ```
 
 ## 6. Install
+Now you need to copy or move the `sdm845-xiaomi-dipper.dtb` file you saved to the `~/.local/var/pmbootstrap/chroot_rootfs_xiaomi-dipper/boot/dtbs/qcom` directory. If the directory does not exist, you can execute `pmbootstrap install` first.
+
 ### To install to the system partition of an image file:
 ```shell
 pmbootstrap install
@@ -80,4 +86,5 @@ pmbootstrap flasher boot
 ```shell
 pmbootstrap flasher flash_kernel
 ```
+
 
