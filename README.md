@@ -43,9 +43,9 @@ pmbootstrap -j8 build linux-xiaomi-dipper
 Open a new terminal and execute `pmbootstrap log` to view the log.
 
 ## 5. Build device
-### When building the device, the firmware is automatically built.
 ```shell
 cd ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/device-xiaomi-dipper
+pmbootstrap checksum firmware-xiaomi-dipper
 pmbootstrap checksum device-xiaomi-dipper
 pmbootstrap build device-xiaomi-dipper
 ```
