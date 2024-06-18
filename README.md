@@ -21,8 +21,11 @@ pmbootstrap init
 
 ## 3. Update config
 ```shell
-cd ~/postmarketos
-./update-config.sh
+rm ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-xiaomi-dipper
+rm ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/device-xiaomi-dipper
+mv ~/postmarketos/linux-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+mv ~/postmarketos/device-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+mv ~/postmarketos/firmware-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 ```
 
 ## 4. Build linux
@@ -72,3 +75,4 @@ pmbootstrap flasher boot
 ```shell
 pmbootstrap flasher flash_kernel
 ```
+
