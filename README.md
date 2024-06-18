@@ -87,4 +87,75 @@ pmbootstrap flasher boot
 pmbootstrap flasher flash_kernel
 ```
 
+## 8. Now use the USB network for ssh connection
+```shell
+# Get the network interface name, usually the last one.
+ip a
+# Activate the network interface.
+ip address add dev enp0s20f0u1 172.16.42.2/24
+# Now start the ssh connection.
+ssh user@172.16.42.1
+```
 
+## 9. Now complete your system
+### Update
+```shell
+sudo apk update
+sudo apk upgrade
+```
+### Connect wifi
+```shell
+sudo nmcli dev wifi connect "Wifi-ssid" password "Wifi-password" ifname wlan0
+sudo nmcli device set wlan0 autoconnect yes
+```
+### Install the ssh server
+```shell
+sudo apk add openssh
+sudo rc-service sshd start
+sudo rc-update add sshd
+```
+### Fix time zone
+```shell
+sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
+or
+```shell
+sudo setup-timezone
+# type: Asia/Shanghai
+```
+
+### Install the docker
+```shell
+sudo apk add docker docker-compose
+sudo addgroup $USER docker
+sudo rc-update add docker boot
+sudo service docker start
+```
+
+## 10. Common commands
+```shell
+# reboot
+sudo reboot
+
+# poweroff
+sudo poweroff
+
+# install app
+sudo apk add app-name
+
+# uninstall app
+sudo apk del app-name
+
+# start service
+sudo rc-service docker stop
+
+# stop service
+sudo rc-service docker start
+
+# Let the service start with the system
+sudo rc-update add docker
+
+# Execute command at startup
+sudo echo "touch boot /home/ivon/boot" >> /etc/local.d/boot.start
+sudo rc-update add local
+```
