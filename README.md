@@ -23,9 +23,9 @@ pmbootstrap init
 ```shell
 rm -rf ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-xiaomi-dipper
 rm -rf ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/device-xiaomi-dipper
-mv ~/postmarketos/linux-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
-mv ~/postmarketos/device-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
-mv ~/postmarketos/firmware-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+cp -r ~/postmarketos/linux-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+cp -r ~/postmarketos/device-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
+cp -r ~/postmarketos/firmware-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/
 ```
 
 ## 4. Build linux
