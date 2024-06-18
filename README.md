@@ -92,7 +92,7 @@ pmbootstrap flasher flash_kernel
 # Get the network interface name, usually the last one.
 ip a
 # Activate the network interface.
-ip address add dev enp0s20f0u1 172.16.42.2/24
+sudo ip address add dev enp0s20f0u1 172.16.42.2/24
 # Now start the ssh connection.
 ssh user@172.16.42.1
 ```
