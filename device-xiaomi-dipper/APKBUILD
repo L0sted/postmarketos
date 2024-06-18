@@ -11,7 +11,6 @@ depends="
 	linux-postmarketos-qcom-sdm845
 	mkbootimg
 	postmarketos-base
-	postmarketos-update-kernel
 	soc-qcom-sdm845
 	soc-qcom-sdm845-ucm
 "
