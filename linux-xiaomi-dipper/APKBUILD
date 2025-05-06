@@ -20,6 +20,7 @@ _config="config-$_flavor.$arch"
 source="
 	$pkgname-$_commit.tar.gz::https://github.com/evil-hero/$_repository/archive/$_commit.tar.gz
 	$_config
+	01_samsung_panel_ea8074.patch
 "
 builddir="$srcdir/$_repository-$_commit"
 _outdir="out"
@@ -48,4 +49,5 @@ package() {
 		"$pkgdir/usr/share/kernel/$_flavor/kernel.release"
 }
 
-sha512sums="(run 'pmbootstrap checksum linux-xiaomi-dipper' to fill)"
+sha512sums="(run 'pmbootstrap checksum linux-xiaomi-dipper' to fill)
+7eb2e638b1e5f309178f37cfe0451a0e47878dd8de89d699274b57e0ea5d75e7f44abf4ee73f98045dd835301d3bd3799871ee035890ced254a1e56c641ded43  01_samsung_panel_ea8074.patch"

@@ -1,0 +1,11 @@
+--- a/drivers/gpu/drm/panel/panel-samsung-ea8074.c   2024-06-18 11:23:25.000000000 +0300
++++ b/drivers/gpu/drm/panel/panel-samsung-ea8074.c 2025-05-06 19:20:47.391226809 +0300
+@@ -15,6 +15,8 @@
+ #include <drm/drm_modes.h>
+ #include <drm/drm_panel.h>
+ 
++MODULE_LICENSE("GPL");
++
+ static const char * const regulator_names[] = {
+        "vddio",
+        "vddpos",
