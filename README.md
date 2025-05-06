@@ -33,14 +33,14 @@ cp -r ~/postmarketos/firmware-xiaomi-dipper ~/.local/var/pmbootstrap/cache_git/p
 ```shell
 cd ~/.local/var/pmbootstrap/cache_git/pmaports/device/testing/linux-xiaomi-dipper
 pmbootstrap checksum linux-xiaomi-dipper
-pmbootstrap kconfig edit
+pmbootstrap kconfig edit linux-xiaomi-dipper
 ```
 ### Build
-!!! A very important step, you need to copy this file and grant execution permission when the `~/.local/var/pmbootstrap/chroot_native/home/pmos/build/src/linux-749b0d4ab2a325e11a8aba7105a0f678a8ecf404/arch/arm64/boot/dts/qcom/sdm845-xiaomi-dipper.dtb` file exists.
+!!! A very important step, while building kernel you need to copy this file and grant execution permission when the `~/.local/var/pmbootstrap/chroot_native/home/pmos/build/src/linux-749b0d4ab2a325e11a8aba7105a0f678a8ecf404/arch/arm64/boot/dts/qcom/sdm845-xiaomi-dipper.dtb` file exists.
 ```shell
 pmbootstrap -j8 build linux-xiaomi-dipper
 ```
-Open a new terminal and execute `pmbootstrap log` to view the log.
+Open a new terminal and execute `pmbootstrap log` to view the log. Copy file to your home directory or other place, when it appears.
 
 ## 5. Build device
 ```shell
