@@ -9,9 +9,13 @@ git clone https://github.com/evil-hero/postmarketos.git
 ## 1. Install pmbootstrap
 ```shell
 cd ~/postmarketos
-git clone --depth=1 https://gitlab.com/postmarketOS/pmbootstrap.git
+git clone https://gitlab.postmarketos.org/postmarketOS/pmbootstrap.git
+cd pmbootstrap
 mkdir -p ~/.local/bin
-ln -s "$PWD/pmbootstrap/pmbootstrap.py" ~/.local/bin/pmbootstrap
+ln -s "$PWD/pmbootstrap.py" ~/.local/bin/pmbootstrap
+export PATH=$PATH:$HOME/.local/bin
+pmbootstrap --version
+
 ```
 
 ## 2. pmbootstrap init
