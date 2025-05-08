@@ -19,6 +19,9 @@ pmbootstrap --version
 ```
 
 ## 2. pmbootstrap init
+
+Select latest stable release.
+
 ```shell
 pmbootstrap init
 ```
